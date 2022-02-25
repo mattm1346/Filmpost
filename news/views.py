@@ -25,6 +25,5 @@ class PostDetail(View):
                 "post": post,
                 "comments": comments,
                 "upvote": upvote,
-                "downvote": downvote,
             }
         )
