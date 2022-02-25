@@ -14,9 +14,9 @@ class PostDetail(View):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
-        liked = False
+        upvote = False
         if post.upvote.filter(id=self.request.user.id).exists():
-            liked = True
+            upvote = True
 
         return render(
             request, 
